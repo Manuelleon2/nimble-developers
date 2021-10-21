@@ -18,7 +18,7 @@
 
         <div id="contenedor-Espacio-intermedio">
 
-            <form action="{{ route('dashboard') }}" method="">
+            <form action="{{ route('dashboard.juego') }}" method="">
                 <div class="zoom" id="contenedor-target-l">
                     <h1 id="TituloTarget">Crear Partida</h1>
                     <p id="ParrafoTarget">Inicia una partida e invita a 4 personas a jugar</p>

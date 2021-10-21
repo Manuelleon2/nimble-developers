@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardJuegoController;
 use App\Http\Controllers\ErrorController;
 use App\Http\Controllers\ModulosController;
 use App\Http\Controllers\ProgramadorController;
@@ -32,3 +33,5 @@ Route::post('modulos', [ModulosController::class, 'store'])->name('modulos.store
 
 Route::get('programadores', [ProgramadorController::class, 'index'])->name('programadores.index');
 Route::post('programadores', [ProgramadorController::class, 'store'])->name('programadores.store');
+
+Route::get('/dashboard/juego', [DashboardJuegoController::class, 'index'])->name('dashboard.juego');

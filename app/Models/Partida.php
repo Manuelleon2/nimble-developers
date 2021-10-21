@@ -8,10 +8,33 @@ use Illuminate\Database\Eloquent\Model;
 class Partida extends Model
 {
     use HasFactory;
+
     protected $fillable = [
         'codigo',
-        'modelo_id',
+        'modulo_id',
         'programador_id',
         'error_id'
     ];
+
+    //relacion Uno a Muchos (inversa)
+
+    public function modulo()
+    {
+        return $this->belongsTo('App\Models\Modulo');
+    }
+
+    //relacion Uno a Muchos (inversa)
+
+    public function programador()
+    {
+        return $this->belongsTo('App\Models\Programador');
+    }
+
+
+    //relacion Uno a Muchos (inversa)
+
+    public function error()
+    {
+        return $this->belongsTo('App\Models\Error');
+    }
 }

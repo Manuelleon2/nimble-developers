@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Partida;
 use Illuminate\Http\Request;
 
 class DashboardJuegoController extends Controller
@@ -14,6 +15,14 @@ class DashboardJuegoController extends Controller
             $azar .= $caracteresPosibles[rand(0, strlen($caracteresPosibles) - 1)];
         }
 
+        $codigo = new Partida();
+        $codigo->codigo = $azar;
+        $codigo->save();
+
         return view('dashboard-juego', compact('azar'));
+    }
+
+    public function codigo()
+    {
     }
 }

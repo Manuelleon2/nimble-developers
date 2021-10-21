@@ -18,8 +18,8 @@ class CreatePartidasTable extends Migration
 
             $table->string('codigo')->nullable();
 
-            $table->unsignedBigInteger('modelo_id')->nullable();
-            $table->foreign('modelo_id')
+            $table->unsignedBigInteger('modulo_id')->nullable();
+            $table->foreign('modulo_id')
                 ->references('id')->on('modulos')
                 ->onDelete('set null');
 

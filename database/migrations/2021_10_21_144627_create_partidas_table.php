@@ -33,6 +33,11 @@ class CreatePartidasTable extends Migration
                 ->references('id')->on('errors')
                 ->onDelete('set null');
 
+            $table->unsignedBigInteger('ganador_id')->nullable();
+            $table->foreign('ganador_id')
+                ->references('id')->on('users')
+                ->onDelete('set null');
+
             $table->timestamps();
         });
     }

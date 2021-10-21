@@ -65,4 +65,11 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Models\Sala');
     }
+
+    //Relacion Uno a Muchos
+
+    public function partidas()
+    {
+        return $this->hasMany('App\Models\Partida');
+    }
 }

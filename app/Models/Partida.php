@@ -13,7 +13,8 @@ class Partida extends Model
         'codigo',
         'modulo_id',
         'programador_id',
-        'error_id'
+        'error_id',
+        'ganador_id'
     ];
 
     //relacion Uno a Muchos (inversa)
@@ -36,5 +37,12 @@ class Partida extends Model
     public function error()
     {
         return $this->belongsTo('App\Models\Error');
+    }
+
+    //relacion Uno a Muchos (inversa)
+
+    public function user()
+    {
+        return $this->belongsTo('App\Models\User');
     }
 }

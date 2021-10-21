@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Programador extends Model
 {
     use HasFactory;
+
     protected $fillable = [
         'nombre',
         'img'

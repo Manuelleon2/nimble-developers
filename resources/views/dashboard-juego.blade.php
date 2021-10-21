@@ -1,34 +1,49 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="h4 font-weight-bold">
-            Dashboard Prueba
-        </h2>
-    </x-slot>
-    <!DOCTYPE html>
-    <html lang="en">
+@extends('layouts.dashboard')
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Document</title>
-    </head>
+@section('cartasOcultas')
 
-    <body>
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <h2>Codigo Aleatorio</h2>
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="form-group">
-                                <input type="text" name="nombre" id="nombre" disabled value="{{ $azar }}">
-                            </div>
-                        </div>
-                    </div>
+    @isset($last)
+        @if ($last->ganador_id)
+            <div class="conten-cartas-ll">
+                <div class="conten-cartas-1-0"><img class="zoom" id="carta-0"
+                        src="{{ asset($last->programador->img) }}" alt="">
+                </div>
+                <div class="conten-cartas-2-0"><img class="zoom" id="carta-0" src="{{ asset($last->modulo->img) }}"
+                        alt="">
+                </div>
+                <div class="conten-cartas-3-0"><img class="zoom" id="carta-0" src="{{ asset($last->error->img) }}"
+                        alt="">
                 </div>
             </div>
-    </body>
+        @else
+            <div class="conten-cartas-ll">
+                <div class="conten-cartas-1-0"><img class="zoom" id="carta-0"
+                        src="{{ asset('images/juegos/lado-opuesto.jpg') }}" alt="">
+                </div>
+                <div class="conten-cartas-2-0"><img class="zoom" id="carta-0"
+                        src="{{ asset('images/juegos/lado-opuesto.jpg') }}" alt="">
+                </div>
+                <div class="conten-cartas-3-0"><img class="zoom" id="carta-0"
+                        src="{{ asset('images/juegos/lado-opuesto.jpg') }}" alt="">
+                </div>
+            </div>
+        @endif
+    @endisset
 
-    </html>
-</x-app-layout>
+@endsection
+
+@section('misCartas')
+    <div class="conten-cartas">
+        <div class="conten-cartas-1"><img class="zoom" id="carta-0"
+                src="{{ asset('images/juegos/error_2.png') }}" alt=""></div>
+        <div class="conten-cartas-2"><img class="zoom" id="carta-0"
+                src="{{ asset('images/juegos/programador-03.jpg') }}" alt="">
+        </div>
+        <div class="conten-cartas-3"><img class="zoom" id="carta-0"
+                src="{{ asset('images/juegos/modulo-recibo.jpg') }}" alt="">
+        </div>
+        <div class="conten-cartas-4"><img class="zoom" id="carta-0"
+                src="{{ asset('images/juegos/programador-01.jpg') }}" alt="">
+        </div>
+    </div>
+@endsection

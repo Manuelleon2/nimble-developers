@@ -15,15 +15,15 @@
     float: left;
     border: 1px solid black;
     border-radius: 4%;
-    margin-top: 13%;
-    margin-left: 10%;
+    margin-top: 15%;
+    margin-left: 15%;
     width: 25%;
     background-color: white;
 }
 
 #TituloPrincipal{
-    margin-top: 3%;
-    margin-right: 14%;
+    margin-top: 2%;
+    margin-right: 12%;
     color: white;
     font-family:Georgia, 'Times New Roman', Times, serif;
     font-size: 500%;
@@ -32,7 +32,7 @@
 
 #Container-Imagen-Principal{
     margin-top: 1%;
-    margin-right: 10%;
+    margin-right: 15%;
     float: right;
     width: 40%;
     height: 650px;

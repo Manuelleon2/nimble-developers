@@ -1,5 +1,5 @@
 <x-app-layout>
-    <x-slot name="header">
+    <x-slot name="header" id="Fondo_Pre-Inicio">
         <h2 class="h4 font-weight-bold">
             {{ __('Dashboard') }}
         </h2>

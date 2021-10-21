@@ -64,7 +64,8 @@
 @section('content')
 
     <body id="Fondo_init">
-        <h1 id="TituloPrincipal"><b>Donde Esta el Bug?<b></h1>
+        <MARQUEE scrollamount="15" id="TituloPrincipal">Donde Esta el Bug?</MARQUEE>
+        <!--<h1 id="TituloPrincipal"><b>Donde Esta el Bug?<b></h1>-->
         <div class="container" id="Container-Login-registro"><br>
             <div class="container">
                 <!-- Pills navs -->

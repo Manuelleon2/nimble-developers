@@ -22,12 +22,13 @@
 }
 
 #TituloPrincipal{
-    margin-top: 2%;
+    margin-top: 1%;
     margin-right: 12%;
     color: white;
     font-family:Georgia, 'Times New Roman', Times, serif;
     font-size: 500%;
     float: right;
+    width: 47%;
 }
 
 #Container-Imagen-Principal{
@@ -45,7 +46,7 @@
 
 #TituloPre-inicio{
     margin-right: 27%;
-    color: white;
+    color:#97cf57;
     font-family:Georgia, 'Times New Roman', Times, serif;
     font-size: 500%;
     float: right;

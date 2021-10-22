@@ -93,6 +93,7 @@ class DashboardJuegoController extends Controller
 
         $img_random = '';
 
+
         if ($variable == 1) {
             $m =  DB::table('modulos')
                 ->where('id', '!=', $partida->modulo_id)
@@ -102,6 +103,7 @@ class DashboardJuegoController extends Controller
                 ->first();
             $img_random = $m;
         }
+
 
         if ($variable == 2) {
             $p =  DB::table('programadors')
@@ -113,6 +115,7 @@ class DashboardJuegoController extends Controller
             $img_random = $p;
         }
 
+
         if ($variable == 3) {
             $e =  DB::table('errors')
                 ->where('id', '!=', $partida->error_id)
@@ -123,7 +126,7 @@ class DashboardJuegoController extends Controller
             $img_random = $e;
         }
 
-
+        /*  Guardado de dichos datos_____________ */
         $sala = new Sala();
         $sala->partida_id = $partida->id;
         $sala->img = $restante_modulos;

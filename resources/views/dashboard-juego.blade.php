@@ -33,7 +33,7 @@
 @endsection
 
 @section('misCartas')
-    <div class="conten-cartas">
+    <div class="contenedor-cartas">
         <div class="conten-cartas-1"><img class="zoom" id="carta-0" src="{{ asset($sala->img) }}" alt=""></div>
         <div class="conten-cartas-2"><img class="zoom" id="carta-0" src="{{ asset($sala->img2) }}" alt="">
         </div>

@@ -34,16 +34,12 @@
 
 @section('misCartas')
     <div class="conten-cartas">
-        <div class="conten-cartas-1"><img class="zoom" id="carta-0"
-                src="{{ asset('images/juegos/error_2.png') }}" alt=""></div>
-        <div class="conten-cartas-2"><img class="zoom" id="carta-0"
-                src="{{ asset('images/juegos/programador-03.jpg') }}" alt="">
+        <div class="conten-cartas-1"><img class="zoom" id="carta-0" src="{{ asset($sala->img) }}" alt=""></div>
+        <div class="conten-cartas-2"><img class="zoom" id="carta-0" src="{{ asset($sala->img2) }}" alt="">
         </div>
-        <div class="conten-cartas-3"><img class="zoom" id="carta-0"
-                src="{{ asset('images/juegos/modulo-recibo.jpg') }}" alt="">
+        <div class="conten-cartas-3"><img class="zoom" id="carta-0" src="{{ asset($sala->img3) }}" alt="">
         </div>
-        <div class="conten-cartas-4"><img class="zoom" id="carta-0"
-                src="{{ asset('images/juegos/programador-01.jpg') }}" alt="">
+        <div class="conten-cartas-4"><img class="zoom" id="carta-0" src="{{ asset($sala->img4) }}" alt="">
         </div>
     </div>
 @endsection

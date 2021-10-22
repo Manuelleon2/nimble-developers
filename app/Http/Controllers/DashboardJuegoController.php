@@ -13,12 +13,14 @@ class DashboardJuegoController extends Controller
     public function index()
     {
         $codigo = new Partida();
-
         /* busqueda ultima partida */
         $last = Partida::all()->last();
+        /* $id_partida = Partida::all()->pluck('id')->last(); */
+        $sala = Sala::where('partida_id', $last->id)->where('user_id', auth()->user()->id)->first();
+
         $id = Auth::user()->id;
 
-        return view('dashboard-juego', compact('last', 'id', 'codigo'));
+        return view('dashboard-juego', compact('last', 'id', 'codigo', 'sala'));
     }
 
     public function asignarCard()
@@ -52,28 +54,84 @@ class DashboardJuegoController extends Controller
 
         /* Guardado de dichos datos_________*/
 
-        $id = Auth::user()->id;
 
         $partida = new Partida();
         $partida->codigo = $codigo;
         $partida->modulo_id = $modulo;
         $partida->programador_id = $programador;
         $partida->error_id = $error;
-        /* $partida->save(); */
+        $partida->save();
 
 
         /* Datos de la salas_________*/
 
-        $restante_modulos =  DB::select('select id from modulos where id != ?', [$partida->modulo_id]);
-        $mol = array_rand($restante_modulos);
+        $restante_modulos =  DB::table('modulos')
+            ->where('id', '!=', $partida->modulo_id)
+            ->inRandomOrder()
+            ->pluck('img')
+            ->first();
 
-        /* return $restante_modulos; */
-        return $mol;
+        $restante_programadores =  DB::table('programadors')
+            ->where('id', '!=', $partida->programador_id)
+            ->inRandomOrder()
+            ->pluck('img')
+            ->first();
+
+        $restante_errores =  DB::table('errors')
+            ->where('id', '!=', $partida->error_id)
+            ->inRandomOrder()
+            ->pluck('img')
+            ->first();
+
+
+
+        $a = "123";
+        $variable = '';
+        for ($i = 0; $i < 1; $i++) {
+            $variable .= $a[rand(0, strlen($a) - 1)];
+        }
+
+        $img_random = '';
+
+        if ($variable == 1) {
+            $m =  DB::table('modulos')
+                ->where('id', '!=', $partida->modulo_id)
+                ->where('id', '!=', $restante_modulos)
+                ->inRandomOrder()
+                ->pluck('img')
+                ->first();
+            $img_random = $m;
+        }
+
+        if ($variable == 2) {
+            $p =  DB::table('programadors')
+                ->where('id', '!=', $partida->programador_id)
+                ->where('id', '!=', $restante_programadores)
+                ->inRandomOrder()
+                ->pluck('img')
+                ->first();
+            $img_random = $p;
+        }
+
+        if ($variable == 3) {
+            $e =  DB::table('errors')
+                ->where('id', '!=', $partida->error_id)
+                ->where('id', '!=', $restante_errores)
+                ->inRandomOrder()
+                ->pluck('img')
+                ->first();
+            $img_random = $e;
+        }
 
 
         $sala = new Sala();
         $sala->partida_id = $partida->id;
-        $sala->user_id = $id;
+        $sala->img = $restante_modulos;
+        $sala->img2 = $restante_errores;
+        $sala->img3 = $restante_programadores;
+        $sala->img4 = $img_random;
+        $sala->user_id = Auth::user()->id;;
+        $sala->save();
 
         return redirect()->route('dashboard.juego')->with('codigo', 'El codigo de la partida es ' . $codigo);
     }

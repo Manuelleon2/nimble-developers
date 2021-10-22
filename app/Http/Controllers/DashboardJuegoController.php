@@ -95,9 +95,16 @@ class DashboardJuegoController extends Controller
 
 
         if ($variable == 1) {
+
+            $res_modulos =  DB::table('modulos')
+                ->where('id', '!=', $partida->modulo_id)
+                ->inRandomOrder()
+                ->pluck('id')
+                ->first();
+
             $m =  DB::table('modulos')
                 ->where('id', '!=', $partida->modulo_id)
-                ->where('id', '!=', $restante_modulos)
+                ->where('id', '!=', $res_modulos)
                 ->inRandomOrder()
                 ->pluck('img')
                 ->first();
@@ -106,9 +113,15 @@ class DashboardJuegoController extends Controller
 
 
         if ($variable == 2) {
+            $res_programadores =  DB::table('programadors')
+                ->where('id', '!=', $partida->programador_id)
+                ->inRandomOrder()
+                ->pluck('id')
+                ->first();
+
             $p =  DB::table('programadors')
                 ->where('id', '!=', $partida->programador_id)
-                ->where('id', '!=', $restante_programadores)
+                ->where('id', '!=', $res_programadores)
                 ->inRandomOrder()
                 ->pluck('img')
                 ->first();
@@ -117,9 +130,15 @@ class DashboardJuegoController extends Controller
 
 
         if ($variable == 3) {
+            $res_errores =  DB::table('errors')
+                ->where('id', '!=', $partida->error_id)
+                ->inRandomOrder()
+                ->pluck('id')
+                ->first();
+
             $e =  DB::table('errors')
                 ->where('id', '!=', $partida->error_id)
-                ->where('id', '!=', $restante_errores)
+                ->where('id', '!=', $res_errores)
                 ->inRandomOrder()
                 ->pluck('img')
                 ->first();

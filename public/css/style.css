@@ -259,6 +259,13 @@ div.zoom {
             font-size: 110%;
         }
 
+        #botones-003 {
+            width: 47%;
+            height: 70px;
+            font-size: 110%;
+            margin-left: 0.5%;
+        }
+
 
         .conten-button-adivinarYpreguntar {
             width: 100%;

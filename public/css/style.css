@@ -1,24 +1,10 @@
 
+/*------------------------------Estos estilos pertenecen al template login----------------------------*/
+
 #Fondo_init{
     background: #360033;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #0b8793, #360033);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #0b8793, #360033); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
-
-#Fondo_Pre-Inicio{
-    background: #4b6cb7;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #182848, #4b6cb7);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #182848, #4b6cb7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
-
-#Container-Login-registro{
-    float: left;
-    border: 1px solid black;
-    border-radius: 4%;
-    margin-top: 15%;
-    margin-left: 15%;
-    width: 25%;
-    background-color: white;
 }
 
 #TituloPrincipal{
@@ -29,6 +15,16 @@
     font-size: 500%;
     float: right;
     width: 47%;
+}
+
+#Container-Login-registro{
+    float: left;
+    border: 1px solid black;
+    border-radius: 4%;
+    margin-top: 15%;
+    margin-left: 15%;
+    width: 25%;
+    background-color: white;
 }
 
 #Container-Imagen-Principal{
@@ -44,6 +40,25 @@
     background: #000000 !important
 }
 
+/*----------------------------------------------------------------------------------------------------*/
+
+
+
+
+/*------------------------------Estos estilos pertenecen al template index----------------------------*/
+
+#Fondo_Pre-Inicio{
+    background: #4b6cb7;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #182848, #4b6cb7);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #182848, #4b6cb7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.conten-titu-pre-inicio{
+    margin-top: 3%;
+    width: 100%;
+    height: 100px;
+}
+
 #TituloPre-inicio{
     margin-right: 27%;
     color:#97cf57;
@@ -57,6 +72,14 @@
     float: left;
     width: 30%;
     height: 200px;
+}
+
+#contenedor-imagen-fail{
+    margin-top: 2%;
+    float: right;
+    margin-right: 2%;
+    width: 28%;
+    height: auto;
 }
 
 #contenedor-Espacio-intermedio{
@@ -79,6 +102,24 @@
     background: linear-gradient(to bottom, #333333, #e9d362); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
+#TituloTarget{
+    font-family:cursive;
+    margin-top: 10%;
+    margin-left: 10%;
+}
+
+#ParrafoTarget{
+    font-family: 'Courier New', Courier, monospace;
+    margin-left: 5%;
+    margin-top: 6%;
+}
+
+#ButtonTarget{
+    width: 50%;
+    margin-top: 5%;
+    margin-left: 23%;
+}
+
 #contenedor-target-ll{
     border: 1px solid black;
     border-radius: 2%;
@@ -92,18 +133,6 @@
     background: linear-gradient(to bottom, #333333, #e9d362); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-#TituloTarget{
-    font-family:cursive;
-    margin-top: 10%;
-    margin-left: 10%;
-}
-
-#ParrafoTarget{
-    font-family: 'Courier New', Courier, monospace;
-    margin-left: 5%;
-    margin-top: 6%;
-}
-
 #InputTarget{
     width: 60%;
     margin-left: 18%;
@@ -113,29 +142,6 @@
 #InputTarget input{
     background-color: white;
 }
-
-
-#ButtonTarget{
-    width: 50%;
-    margin-top: 5%;
-    margin-left: 23%;
-}
-#contenedor-imagen-fail{
-    margin-top: 2%;
-    float: right;
-    margin-right: 2%;
-    width: 28%;
-    height: auto;
-}
-
-/* contenido pre inicio*/
-
-.conten-titu-pre-inicio{
-    margin-top: 3%;
-    width: 100%;
-    height: 100px;
-}
-
 
 div.zoom {
     -webkit-transition: all .2s ease-in-out;
@@ -151,13 +157,19 @@ div.zoom {
         transform: scale(1.1);
     }
 
+/*----------------------------------------------------------------------------------------------------*/
 
+
+
+/*------------------------------Estos estilos pertenecen al template Dashboard----------------------------*/
+
+
+
+
+/*----------------------------------------------------------------------------------------------------*/
 
 
     /* Dashboard_____________________________________________*/
-
-
-
 
         body p {
             font-size: 100%;
